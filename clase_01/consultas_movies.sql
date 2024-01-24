@@ -1,4 +1,5 @@
 -- Mostrar todos los registros de la tabla de movies.
+SELECT * FROM movies;
 -- Mostrar el nombre, apellido y rating de todos los actores.
 -- Mostrar el título de todas las series y usar alias para que tanto el nombre de la tabla como el campo estén en español.
 -- Mostrar el nombre y apellido de los actores cuyo rating sea mayor a 7.5.
