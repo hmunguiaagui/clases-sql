@@ -8,3 +8,5 @@ SELECT series.title, COUNT(seasons.number) as total FROM series JOIN seasons ON 
 SELECT g.name, COUNT(m.genre_id) AS total FROM genres g JOIN movies m ON m.genre_id = g.id GROUP BY g.name HAVING total >= 3; 
 -- Mostrar sólo el nombre y apellido de los actores que trabajan en todas las películas de la guerra de las galaxias y que estos no se repitan.
 SELECT DISTINCT(CONCAT(a.first_name, " ",a.last_name)) AS name FROM actor_movie am JOIN actors a ON a.id = am.actor_id JOIN movies m ON m.id = am.movie_id WHERE m.title LIKE "%La Guerra de las galaxias%";
+-- Otra solución al query anterior
+SELECT a.first_name, a.last_name FROM actor_movie am JOIN actors a ON a.id = am.actor_id JOIN movies m ON m.id = am.movie_id WHERE m.title LIKE "%La Guerra de las galaxias%" GROUP BY a.id;
